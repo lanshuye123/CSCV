@@ -4,4 +4,3 @@
  
 你可以使用 `<script src="https://lanshuye123.github.io/CSCV/Clicker.js"> </script>` 将这个小功能添加到你的网站。
  
-<script src="https://lanshuye123.github.io/CSCV/Clicker.js"> </script>
