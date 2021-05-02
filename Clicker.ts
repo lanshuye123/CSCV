@@ -8,7 +8,12 @@ const ClickerSettings = {
 
 var Clicker = {} as any;
 
-Clicker.ClickerFunction = ((ev:MouseEvent)=>{
+Clicker.ClickerFunction = ((ev:MouseEvent|any)=>{
+
+    if(ev.path[0].localName != "div" || ev.path[0].localName != "body" || ev.path[0].localName != "html"){
+        return;
+    }
+
     var GA = 1;
     var Text = Clicker.CountGroup[Clicker.Count];
 
