@@ -6,7 +6,7 @@ var ClickerSettings = {
 };
 var Clicker = {};
 Clicker.ClickerFunction = (function (ev) {
-    if (ev.path[0].localName != "div" || ev.path[0].localName != "body" || ev.path[0].localName != "html") {
+    if (ev.path[0].localName != "div" && ev.path[0].localName != "body" && ev.path[0].localName != "html") {
         return;
     }
     var GA = 1;
