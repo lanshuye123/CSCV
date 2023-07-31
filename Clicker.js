@@ -13,22 +13,23 @@ Clicker.ClickerFunction = (function (ev) {
     var Text = Clicker.CountGroup[Clicker.Count];
     var Canvas = window.document.createElement("canvas");
     Canvas.style.backgroundColor = "transparent";
-    Canvas.width = 100;
-    Canvas.height = 100;
+    Canvas.width = 40;
+    Canvas.height = 25;
     var Context = Canvas.getContext("2d");
     Context.fillStyle = ClickerSettings.Color;
     Context.font = ClickerSettings.Font;
     Context.fillText(Text, 0, 20);
     window.document.body.append(Canvas);
     Canvas.style.position = "fixed";
-    Canvas.style.top = ev.y.toString();
-    Canvas.style.left = ev.x.toString();
+    Canvas.style.top = (ev.y - 12).toString();
+    Canvas.style.left = (ev.x - 20).toString();
     Clicker.Count = Clicker.Count + 1;
     if (Clicker.Count == 12) {
         Clicker.Count = 0;
     }
     setInterval(function () {
         Context.clearRect(0, 0, 100, 100);
+        Canvas.style.top = (Canvas.style.top - 12).toString();
         GA = GA - 0.01;
         Context.globalAlpha = GA;
         Context.fillText(Text, 0, 20);
